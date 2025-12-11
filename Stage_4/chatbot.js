@@ -1,26 +1,7 @@
 //prompt-sync je javno dostupan npm paket koji radi lokalno i omogućava sinkroni unos, slično kao sync-input
 const prompt = require('prompt-sync')();
 
-function calculateBMI() {
-
-    console.log("Let's calculate your BMI.");
-    console.log("Enter your height in cm:");
-    let height = prompt();
-
-    console.log("Enter your weight in kg:");
-    let weight = prompt();
-
-    console.log("Enter your gender (M/F):");
-    /*
-        metoda .toUpperCase() sva slova u stringu pretvara u velika slova
-        metoda .toLowerCase() sva slova u stringu pretvara u mala slova
-     */
-    let gender = prompt().toUpperCase();
-
-    while (gender !== "M" && gender !== "F") {
-        console.log("Try again:");
-        gender = prompt().toUpperCase();
-    }
+function calculateBMI(weight, height, gender) {
 
     //metoda .toFixed(n) zaokružuje decimalni broj na n decimala
     let bmi = (weight / (height / 100) ** 2).toFixed(1);
@@ -84,8 +65,30 @@ console.log(`Your age is ${age}; that's a good time to start programming!`);
 //BMI:
 let doMore = true;
 do {
-    calculateBMI()
+
+    console.log("Let's calculate your BMI.");
+    console.log("Enter your height in cm:");
+    let height = prompt();
+
+    console.log("Enter your weight in kg:");
+    let weight = prompt();
+
+    console.log("Enter your gender (M/F):");
+    /*
+        metoda .toUpperCase() sva slova u stringu pretvara u velika slova
+        metoda .toLowerCase() sva slova u stringu pretvara u mala slova
+     */
+    let gender = prompt().toUpperCase();
+
+    while (gender !== "M" && gender !== "F") {
+        console.log("Try again:");
+        gender = prompt().toUpperCase();
+    }
+
+    calculateBMI(weight, height, gender);
+
     console.log("More: (Y/N)");
+
     let userInput = prompt().toUpperCase();
     if (userInput === "N") {
         doMore = false;
