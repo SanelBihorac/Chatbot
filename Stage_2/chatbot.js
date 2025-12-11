@@ -1,3 +1,4 @@
+// prompt-sync je javno dostupan npm paket koji radi lokalno i omogućava sinkroni unos, slično kao sync-input
 const prompt = require('prompt-sync')();
 
 console.log("Hello! My name is Aid.");
