@@ -1,25 +1,21 @@
-//prompt-sync je javno dostupan npm paket koji radi lokalno i omogućava sinkroni unos, slično kao sync-input
-const prompt = require('prompt-sync')();
-
-console.log("Hello! My name is Aid.");
-console.log("I was created in 2025.");
+alert("Hello! My name is Aid.");
+alert("I was created in 2025.");
 
 let name = prompt("What is your name? ");
-
-console.log(`What a great name you have, ${name}!`);
+alert(`What a great name you have, ${name}!`);
 console.log("What a great name you have, " + name + "!");
-console.log("Let me guess your age.");
-console.log("Enter remainders of dividing your age by 3, 5 and 7.")
 
-// taking the remainders:
+alert("Let me guess your age.");
+alert("Enter remainders of dividing your age by 3, 5, and 7.");
 
-let rem3 = prompt();
-let rem5 = prompt();
-let rem7 = prompt();
+// Taking the remainders:
+let rem3 = parseInt(prompt("Enter remainder when divided by 3:"));
+let rem5 = parseInt(prompt("Enter remainder when divided by 5:"));
+let rem7 = parseInt(prompt("Enter remainder when divided by 7:"));
 
-//calculating age
+// Calculating age
 let age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105;
 
-//printing age:
+// Printing age:
 console.log(`Your age is ${age}; that's a good time to start programming!`);
-console.log("Your age is " + age + "; that's a good time to start programming!");
+alert(`Your age is ${age}; that's a good time to start programming!`);
